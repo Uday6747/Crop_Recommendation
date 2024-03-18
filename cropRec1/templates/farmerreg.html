@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
+</head>
+<body style="background-image: url({{ url_for('static', filename='bk.jpg') }})">
+
+<ul>
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="/adminlogin">AdminLogin</a></li>
+  <li><a href="/farmerlogin">FarmerLogin</a></li>
+  <li style="float:right"><a href="/about">About</a></li>
+</ul>
+<div style="padding-top:20px;padding-left:250px;">
+<form method="post" action="regDB">
+<table>
+<caption><h1 style="color:red;">Farmer Registration Form</h1></caption>
+<tr><td  style="color:red;">Name</td><td><input type="text" name="name" required></td></tr>
+<tr><td  style="color:red;">UserName</td><td><input type="text" name="un" required></td></tr>
+<tr><td style="color:red;">Password</td><td><input type="password" name="pwd" required></td></tr>
+<tr><td style="color:red;">Aadhar</td><td><input type="text" name="aadhar" required></td></tr>
+<tr><td style="color:red;">Contact</td><td><input type="text" name="contact" required></td></tr>
+
+
+<tr><td colspan=2 align=center><input type="submit" value="submit"></td></tr>
+</table>
+<center><h1>{{msg}}</h1></center>
+</form>
+<p style="padding-left:50px;"><a href='/farmerreg'>New Farmer Register Here</a></p>
+</div>
+</body>
+</html>
+
+
